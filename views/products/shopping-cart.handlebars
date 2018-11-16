@@ -1,0 +1,59 @@
+<section id="main">
+    <div class="container">
+
+        <section id="header">
+            <h3>Shopping Cart</h3>
+
+        </section>
+
+        <section class="minimum-height">
+            {{# if products }}
+            <div class="row">
+                <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+                    <ul class="list-group">
+                        {{# each products }}
+                        <li>
+                            <a href="#" ></a><img src="/images2/{{this.item.imagePath }}" alt="..." class="cart-image"></a>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>{{ this.item.title }}</strong>
+                            <span class="label label-success">${{ this.price }}</span>
+                            <div class="btn-group">
+                                {{!-- <button class="btn btn-primary btn-xs dropdown-toggle" type="button" data-toggle="dropdown">Action
+                                    <span class="caret"></span></button> --}}
+                                <ul class="dropdown-menu">
+                                    <li><a href="/products/reduce/{{this.item._id}}"> Reduce 1</a></li>
+                                    <li><a href="/products/remove/{{this.item._id}}">Remove All</a></li>
+                                </ul>
+                            </div>
+                            <span> Quantity: {{ this.qty }}</span>
+                        </li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+                    <strong>Total: {{ totalPrice }}</strong>
+                    <br>
+                    <strong>Total Quantity: {{ totalQty }}</strong>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+                    <a href="/products/checkout" type="button" class="btn btn-success">Checkout</a>
+                </div>
+            </div>
+            {{ else }}
+            <div class="row">
+                <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+                    <h2>No Items in Cart</h2>
+                </div>
+            </div>
+            {{/if}}
+
+        </section>
+
+    </div>
+</section>

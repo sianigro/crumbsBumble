@@ -1,0 +1,32 @@
+
+<section id="main">
+    <div class="container">
+
+        <section id="header">
+            <h3>Products</h3>
+        </section>
+        <div class="row">
+            {{#each products }}
+            <div class="col-4 col-6-medium col-12-small">
+                <section class="box">
+                    <a href="#" class="image featured"> <img src="/images2/{{this.imagePath }}" alt="..." class="thumbPic3">
+                    </a>
+                    <section style="margin-left: 2em">
+                        <header>
+                            <h3 style="text-align: center">{{ this.title }}</h3>
+                        </header>
+                        <p>{{ this.description }}</p>
+                        
+						<p style="text-align: center">${{ this.price }}</p>
+                        <footer>
+                            <ul class="actions">
+                                <li style=" margin-left: 2em "><a href="products/add-to-cart/{{this._id}}" class="button alt"
+                                        role="button">Add To Cart</a></li>
+                            </ul>
+                        </footer>
+                    </section>
+            </div>
+            {{/each}}
+        </div>
+
+</section>

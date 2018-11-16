@@ -1,0 +1,45 @@
+
+<section id="main">
+	<div class="container">
+
+
+		<section id="header">
+
+			<h3>Products</h3>
+
+		</section>
+
+		<div class="row">
+			{{#each products }}
+			<div class="col-4 col-6-medium col-12-small">
+				<section class="box">
+					<a href="#" class="image featured"> <img src="/images2/{{this.imagePath }}" alt="..." class="thumbPic3"> </a>
+					<section style="margin-left: 2em">
+						<header>
+							<h3 style="text-align: center">{{ this.title }}</h3>
+						</header>
+						<p style="text-align: center">{{ this.description }}</p>
+						 <p>${{ this.price }}</p>
+						<footer>
+							<ul class="actions" style="margin-left: 2em;">
+								<li style=" margin-left: 2em "><a href="products/add-to-cart/{{this._id}}" class="button alt btnsize" role="button">Add
+										To Cart</a></li>
+								<br />
+								<br />
+								<li><a class="button alt" role="button" href="/products/edit/{{id}}">Edit</a></li>
+
+								<li>
+									<form method="post" action="/products/{{id}}?_method=DELETE">
+										<input type="hidden" name="_method" value="DELETE">
+										<input type="submit" class="button danger" role="button" value="Delete">
+									</form>
+								</li>
+							</ul>
+						</footer>
+					</section>
+			</div>
+			{{/each}}
+		</div>
+
+	</div>
+</section>

@@ -1,0 +1,65 @@
+<section id="main">
+	<div class="container">
+
+		<section id="header">
+
+		</section>
+
+		<section class="minimum-height">
+
+			<h1>Checkout</h1>
+			<h4>Your Total: ${{total}}</h4>
+			<div id="charge-error" class="alert alert-danger {{#if noError}}hidden{{/if}}">
+				{{errMsg}}
+			</div>
+			{{!-- <form action="/products/checkout" method="post" id="checkout-form"> --}}
+				{{!-- <form action="products/checkout" method="post" id="checkout-form"> --}}
+					<form action="/products" method="post">
+
+						<label for="name" class="sr-only">Name</label>
+						<input type="text" id="name" class="form-control" placeholder="Name" name="name" required>
+
+						<br />
+
+						<label for="address" class="sr-only">Address</label>
+						<input type="text" id="address" class="form-control" placeholder="Address" name="address" required>
+
+						<br />
+
+						<label for="card-name" class="sr-only">Card Holder Name</label>
+						<input type="text" id="card-name" class="form-control" placeholder="Card Holder Name" required>
+
+						<br />
+
+						<label for="card-number" class="sr-only">Credit Card Number</label>
+						<input type="text" id="card-number" class="form-control" placeholder="Credit Card Number" required>
+
+						<br />
+
+						<label for="card-expiry-month" class="sr-only">Expiration Month</label>
+						<input type="text" id="card-expiry-month" class="form-control" placeholder="Expiration Month" required>
+
+						<br />
+
+						<label for="card-expiry-year" class="sr-only">Expiration Year</label>
+						<input type="text" id="card-expiry-year" class="form-control" placeholder="Expiration Year" required>
+
+						<br />
+
+						<label for="card-cvc" class="sr-only">CVC</label>
+						<input type="text" id="card-cvc" class="form-control" placeholder="CVC" required>
+
+						<br />
+
+						<button type="submit" class="btn btn-success">Buy now</button>
+					</form>
+		</section>
+
+
+	</div>
+</section>
+
+
+
+<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+<script type="text/javascript" src="/public/assets/js/checkout.js"></script>
